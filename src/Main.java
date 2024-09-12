@@ -26,18 +26,18 @@ public class Main {
         int option;
 
         do {
-            System.out.println("SENA Viewer Menu:");
+            System.out.println(" Menu: ");
             System.out.println("1. Movies");
             System.out.println("2. Series");
             System.out.println("3. Books");
             System.out.println("4. Magazines");
             System.out.println("5. Report");
             System.out.println("6. Report Today");
-            System.out.println("0. Exit");
-            System.out.print("Select an option: ");
+            System.out.println("0. Salir");
+            System.out.print("Selecciona una opción: ");
 
             option = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();  // Consumir nueva linea
 
             switch (option) {
                 case 1:
@@ -59,10 +59,10 @@ public class Main {
                     generateDailyReport();
                     break;
                 case 0:
-                    System.out.println("Exiting...");
+                    System.out.println("Saliendo...");
                     break;
                 default:
-                    System.out.println("Invalid option. Please select a valid option.");
+                    System.out.println("Opción inválida. Por favor, selecciona una opción válida.");
             }
 
         } while (option != 0);
@@ -73,7 +73,7 @@ public class Main {
     private void displayMovies() {
         System.out.println("Movies:");
         if (movies.isEmpty()) {
-            System.out.println("No movies available.");
+            System.out.println("No hay peliculas disponibles.");
         } else {
             for (Movie movie : movies) {
                 System.out.println(movie);
@@ -84,7 +84,7 @@ public class Main {
     private void displaySeries() {
         System.out.println("Series:");
         if (series.isEmpty()) {
-            System.out.println("No series available.");
+                System.out.println("No hay series disponibles.");
         } else {
             for (Serie serie : series) {
                 System.out.println(serie);
@@ -95,7 +95,7 @@ public class Main {
     private void displayBooks() {
         System.out.println("Books:");
         if (books.isEmpty()) {
-            System.out.println("No books available.");
+            System.out.println("No hay libros disponibles.");
         } else {
             for (Book book : books) {
                 System.out.println(book);
@@ -106,7 +106,7 @@ public class Main {
     private void displayMagazines() {
         System.out.println("Magazines:");
         if (magazines.isEmpty()) {
-            System.out.println("No magazines available.");
+            System.out.println("No hay revista disponible.");
         } else {
             for (Magazine magazine : magazines) {
                 System.out.println(magazine);
@@ -115,12 +115,53 @@ public class Main {
     }
 
     private void generateReport() {
-        System.out.println("Generating general report...");
-        // Implement report generation logic here
+        System.out.println("Generando informe general...");
+
+        // Contar los elementos en cada lista
+        int movieCount = movies.size();
+        int seriesCount = series.size();
+        int bookCount = books.size();
+        int magazineCount = magazines.size();
+
+        // Mostrar el informe
+        System.out.println("Informe General:");
+        System.out.println("Número de películas: " + movieCount);
+        System.out.println("Número de series: " + seriesCount);
+        System.out.println("Número de libros: " + bookCount);
+        System.out.println("Número de revistas: " + magazineCount);
+
+        // Mostrar detalles de cada tipo (opcional)
+        if (movieCount > 0) {
+            System.out.println("\nDetalles de las películas:");
+            for (Movie movie : movies) {
+                System.out.println(movie);
+            }
+        }
+
+        if (seriesCount > 0) {
+            System.out.println("\nDetalles de las series:");
+            for (Serie serie : series) {
+                System.out.println(serie);
+            }
+        }
+
+        if (bookCount > 0) {
+            System.out.println("\nDetalles de los libros:");
+            for (Book book : books) {
+                System.out.println(book);
+            }
+        }
+
+        if (magazineCount > 0) {
+            System.out.println("\nDetalles de las revistas:");
+            for (Magazine magazine : magazines) {
+                System.out.println(magazine);
+            }
+        }
     }
 
     private void generateDailyReport() {
-        System.out.println("Generating daily report...");
+        System.out.println("Generando informe diario...");
         // Implement daily report generation logic here
     }
 
