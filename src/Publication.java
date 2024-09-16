@@ -1,22 +1,19 @@
 import java.util.List;
 
 public class Publication {
-    private int id;
     private String title;
     private String edititionDate;
     private String editorial;
     private List<String> authors;
 
+    // Constructor
     public Publication(String title, String edititionDate, String editorial) {
         this.title = title;
         this.edititionDate = edititionDate;
         this.editorial = editorial;
     }
 
-    // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
+    // Getters y Setters
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
@@ -31,7 +28,11 @@ public class Publication {
 
     @Override
     public String toString() {
-        return String.format("ID: %d, Title: %s, Editition Date: %s, Editorial: %s, Authors: %s",
-                id, title, edititionDate, editorial, authors);
+        return "Publication{" +
+                "title='" + title + '\'' +
+                ", edititionDate='" + edititionDate + '\'' +
+                ", editorial='" + editorial + '\'' +
+                ", authors=" + authors +
+                '}';
     }
 }

@@ -7,16 +7,17 @@ public class Film {
     private int year;
     private boolean viewed;
 
-    public Film(String title, String genre, String creator, int duration, int year) {
+    // Constructor
+    public Film(String title, String genre, String creator, int duration) {
         this.title = title;
         this.genre = genre;
         this.creator = creator;
         this.duration = duration;
-        this.year = year;
-        this.viewed = false;
+        this.year = 0; // Valor predeterminado
+        this.viewed = false; // Valor predeterminado
     }
 
-    // Getters and Setters
+    // Getters y Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -40,7 +41,14 @@ public class Film {
 
     @Override
     public String toString() {
-        return String.format("ID: %d, Title: %s, Genre: %s, Creator: %s, Duration: %d min, Year: %d, Viewed: %b",
-                id, title, genre, creator, duration, year, viewed);
+        return "Film{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", creator='" + creator + '\'' +
+                ", duration=" + duration +
+                ", year=" + year +
+                ", viewed=" + viewed +
+                '}';
     }
 }

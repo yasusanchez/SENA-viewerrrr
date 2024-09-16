@@ -5,13 +5,15 @@ public class Book extends Publication {
     private boolean readed;
     private int timeReaded;
 
+    // Constructor
     public Book(String title, String edititionDate, String editorial, String isbn) {
         super(title, edititionDate, editorial);
         this.isbn = isbn;
-        this.readed = false;
-        this.timeReaded = 0;
+        this.readed = false; // Valor predeterminado
+        this.timeReaded = 0; // Valor predeterminado
     }
 
+    // Getters y Setters
     public String getIsbn() { return isbn; }
     public void setIsbn(String isbn) { this.isbn = isbn; }
 
@@ -23,7 +25,14 @@ public class Book extends Publication {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", ISBN: %s, Readed: %b, Time Readed: %d min",
-                isbn, readed, timeReaded);
+        return "Book{" +
+                "title='" + getTitle() + '\'' +
+                ", edititionDate='" + getEdititionDate() + '\'' +
+                ", editorial='" + getEditorial() + '\'' +
+                ", authors=" + getAuthors() +
+                ", isbn='" + isbn + '\'' +
+                ", readed=" + readed +
+                ", timeReaded=" + timeReaded +
+                '}';
     }
 }

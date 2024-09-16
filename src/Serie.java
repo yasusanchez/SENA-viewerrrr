@@ -2,10 +2,10 @@ public class Serie extends Film {
     private int timeViewed;
     private int sessionQuantity;
 
+    // Constructor
     public Serie(String title, String genre, int duration, int sessionQuantity) {
-        super(title, genre, null, duration, 0); // year is not needed for Series
+        super(title, genre, "", duration);
         this.sessionQuantity = sessionQuantity;
-        this.timeViewed = 0;
     }
 
     public int getTimeViewed() { return timeViewed; }
@@ -16,6 +16,16 @@ public class Serie extends Film {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Time Viewed: %d min, Sessions: %d", timeViewed, sessionQuantity);
+        return "Series{" +
+                "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", genre='" + getGenre() + '\'' +
+                ", creator='" + getCreator() + '\'' +
+                ", duration=" + getDuration() +
+                ", year=" + getYear() +
+                ", viewed=" + isViewed() +
+                ", timeViewed=" + timeViewed +
+                ", sessionQuantity=" + sessionQuantity +
+                '}';
     }
 }

@@ -116,53 +116,12 @@ public class Main {
 
     private void generateReport() {
         System.out.println("Generando informe general...");
-
-        // Contar los elementos en cada lista
-        int movieCount = movies.size();
-        int seriesCount = series.size();
-        int bookCount = books.size();
-        int magazineCount = magazines.size();
-
-        // Mostrar el informe
-        System.out.println("Informe General:");
-        System.out.println("Número de películas: " + movieCount);
-        System.out.println("Número de series: " + seriesCount);
-        System.out.println("Número de libros: " + bookCount);
-        System.out.println("Número de revistas: " + magazineCount);
-
-        // Mostrar detalles de cada tipo (opcional)
-        if (movieCount > 0) {
-            System.out.println("\nDetalles de las películas:");
-            for (Movie movie : movies) {
-                System.out.println(movie);
-            }
-        }
-
-        if (seriesCount > 0) {
-            System.out.println("\nDetalles de las series:");
-            for (Serie serie : series) {
-                System.out.println(serie);
-            }
-        }
-
-        if (bookCount > 0) {
-            System.out.println("\nDetalles de los libros:");
-            for (Book book : books) {
-                System.out.println(book);
-            }
-        }
-
-        if (magazineCount > 0) {
-            System.out.println("\nDetalles de las revistas:");
-            for (Magazine magazine : magazines) {
-                System.out.println(magazine);
-            }
-        }
+        // Implementar la logica de generacion de informes
     }
 
     private void generateDailyReport() {
         System.out.println("Generando informe diario...");
-        // Implement daily report generation logic here
+        // Implementar la logica de generacion de informes diarios
     }
 
     public static void main(String[] args) {
